@@ -2,7 +2,6 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
 }
 
 hr {
@@ -11,13 +10,14 @@ hr {
 
 .Page {
     width: 100%;
-
 }
 
 /* Navbar */
 
 .Navbar {
     padding: 20px;
+    background-color: #ffffff;
+    z-index: 950;
 }
 
 .Navbar a {
@@ -25,6 +25,8 @@ hr {
     font-size: 20px;
     padding-left: 20px;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
+    background-color: #ffffff;
 }
 
 .Navbar a:visited {
@@ -33,6 +35,22 @@ hr {
 
 .Navbar a:hover {
     color: #66CBC4;
+}
+
+.current {
+    font-weight: bold;
+}
+
+/* Sticky class */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.sticky + .Page {
+    padding-top: 102px;
 }
 
 /* Page 1 */
@@ -45,6 +63,7 @@ hr {
 
 .mySlides h2 {
     font-size: 50px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .centered {
@@ -109,23 +128,6 @@ hr {
     top: 0;
 }
 
-/* The dots/bullets/indicators */
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-    background-color: #717171;
-}
-
 /* Fading animation */
 
 .fade {
@@ -158,17 +160,25 @@ hr {
     padding-bottom: 10px;
     padding-left: 80px;
     padding-right: 80px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
 }
 
 /* Page 2 */
 
 #page2 {
-    padding-bottom: 500px;
+    z-index: 900;
 }
 
 .header {
     font-size: 30px;
     text-align: center;
+}
+
+.socialheader {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 .form-horizontal {
@@ -211,4 +221,5 @@ footer {
     color: #000000;
     padding-top: 2rem;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
 }

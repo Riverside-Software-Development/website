@@ -14,44 +14,47 @@
 <body>
     <div class="grid-container">
 
-        <div class="Navbar">
+        <div class="Navbar" id="myNavbar">
 
-            <img src="logo.png" alt="Riverside Software Development Logo" height="75px">
+            <a href="index.html"><img src="logo.png" alt="Riverside Software Development Logo" height="75px"></a>
 
             <a href="index.html">About Us</a>
-            <a href="connect.html">Contact Us</a>
+            <a class="current" href="connect.html">Contact Us</a>
 
         </div>
 
         <div id="page2" class="Page">
 
-            <h2 class="header">Connect With Us</h2>
+            <h2 class="header">Email Us</h2>
 
-            <form class="form-horizontal" name="input" method="POST"
+            <form class="form-horizontal" name="myForm" method="POST" onsubmit="return validateForm()"
                 action="https://formspree.io/riversidesoftwaredevelopment@gmail.com">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Name:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="Name" placeholder="Input your name here">
+                        <input id="Name" class="form-control" type="text" name="Name"
+                            placeholder="Input your name here">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Email:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="email" name="_repolyto"
+                        <input id="Email" class="form-control" type="email" name="_replyto"
                             placeholder="Input your email address here">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="subject">Subject:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" name="_subject" placeholder="Input your name here">
+                        <input id="Subject" class="form-control" type="text" name="_subject"
+                            placeholder="Input your name here">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="message">Message:</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="message" placeholder="Input your message here"></textarea>
+                        <textarea id="Message" class="form-control" name="message"
+                            placeholder="Input your message here"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -62,6 +65,7 @@
             </form>
 
             <div class="social">
+                <h2 class="socialheader">Connect With Us</h2>
 
                 <a href="https://www.facebook.com/riverside.softwaredevelopment.1" target="_blank"><i
                         class="fab fa-facebook"></i></a>
@@ -74,11 +78,50 @@
                 <p>0191 464 5429</p>
                 <p>riversidesoftwaredevelopment@gmail.com</p>
                 <p>David Goldman Informatics Centre</p>
-                <p>Sunderland SR6 0DD</p>
+                <p>Sunderland, SR6 0DD</p>
             </footer>
         </div>
     </div>
     </div>
+
+    <script>
+        function validateForm() {
+
+            var emailName = document.getElementById("Name");
+            var emailAddress = document.getElementById("Email");
+            var emailSubject = document.getElementById("Subject");
+            var emailMessage = document.getElementById("Message");
+
+            if (emailName.value == "" || emailAddress.value == "" || emailSubject.value == "" || emailMessage.value == "") {
+                alert("There must be no blank boxes");
+                return false;
+            }
+
+            else {
+                return true;
+            }
+
+        }
+
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var Navbar = document.getElementById("myNavbar");
+
+        // Get the offset position of the navbar
+        var sticky = Navbar.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                Navbar.classList.add("sticky");
+            } 
+            
+            else {
+                Navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
