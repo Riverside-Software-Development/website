@@ -213,7 +213,10 @@ hr {
     color: #00aced;
 }
 
-.fa-facebook:hover, .fa-twitter:hover {
+.fa-linkedin {
+    color: #0077B5;
+}
+.fa-facebook:hover, .fa-twitter:hover, .fa-linkedin:hover {
     color: #d5d5d5;
 }
 
